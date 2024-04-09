@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Capital Information</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      padding: 20px;
+    }
+    .capital {
+      font-weight: bold;
+    }
+    #capital-name {
+      display: block;
+    }
+    #toggle-btn {
+      margin-top: 10px;
+    }
+    #paragraphs {
+      margin-top: 20px;
+    }
+    #first-paragraph:hover {
+      background-color: yellow;
+      cursor: pointer;
+    }
+    #second-paragraph {
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h1>Capital Information</h1>
+    <p>The capital of Canada is <span id="capital-name">Ottawa</span>.</p>
+    <button id="hide-btn">Hide capital name</button>
+    <button id="show-btn">Show capital name</button>
+    <button id="toggle-btn">Toggle</button>
+  
+    <div id="paragraphs">
+      <p id="first-paragraph">Hover over this paragraph to change background color to yellow.</p>
+      <p id="second-paragraph">Click this paragraph to change background color to green.</p>
+    </div>
+  </div>
+
+  <script>
+    const capitalName = document.getElementById('capital-name');
+    const hideBtn = document.getElementById('hide-btn');
+    const showBtn = document.getElementById('show-btn');
+    const toggleBtn = document.getElementById('toggle-btn');
+    const firstParagraph = document.getElementById('first-paragraph');
+    const secondParagraph = document.getElementById('second-paragraph');
+  
+    hideBtn.addEventListener('click', () => {
+      capitalName.style.display = 'none';
+    });
+  
+    showBtn.addEventListener('click', () => {
+      capitalName.style.display = 'block';
+    });
+  
+    toggleBtn.addEventListener('click', () => {
+      if (capitalName.style.display === 'none') {
+        capitalName.style.display = 'block';
+      } else {
+        capitalName.style.display = 'none';
+      }
+    });
+  
+    firstParagraph.addEventListener('mouseenter', () => {
+      firstParagraph.style.backgroundColor = 'yellow';
+    });
+  
+    firstParagraph.addEventListener('mouseleave', () => {
+      firstParagraph.style.backgroundColor = '';
+    });
+  
+    secondParagraph.addEventListener('click', () => {
+      secondParagraph.style.backgroundColor = 'green';
+    });
+  </script>
+
+</body>
+</html>
